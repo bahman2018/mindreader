@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<style>
+div {
+   transition: all linear 0.5s;
+  background-color: lightblue;
+  height: 100px;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.ng-hide {
+   height: 0;
+   width: 0;
+   background-color: transparent;
+   top:-200px;
+   left: 200px;
+}
+
+</style>
+
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+<body ng-app="myApp" ng-controller="myCtrl" >
+
+<h1>Hide the DIV: <input type="checkbox" ng-model="myCheck"></h1>
+
+<div ng-hide="myCheck"></div>
+
+<script>
+var app = angular.module('myApp', ['ngAnimate']);
+ app.controller('myCtrl', function($scope,$timeout)  {
+		   $scope.init = function(){
+             $scope.num1=(Math.ceil(Math.random() * 12)+1);
+			 $scope.seri1=Math.ceil(Math.random() * 3);  
+			 
+			 $scope.num2=(Math.ceil(Math.random() * 12)+1);
+			 $scope.seri2=Math.ceil(Math.random() * 3);  
+
+             $scope.num3=(Math.ceil(Math.random() * 12)+1);
+			 $scope.seri3=Math.ceil(Math.random() * 3);  
+
+             $scope.num4=(Math.ceil(Math.random() * 12)+1);
+			 $scope.seri4=Math.ceil(Math.random() * 3);  
+
+             $scope.num5=(Math.ceil(Math.random() * 12)+1);
+			 $scope.seri5=Math.ceil(Math.random() * 3);  
+
+
+		   };
+           $timeout($scope.init);
+	   });
+	   app.directive("cardImage1", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num1}} seri{{seri1}} cl1'  src='/~bahman/MindReader/img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage2", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num2}} seri{{seri2}} cl2'   src='/~bahman/MindReader/img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage3", function() {
+           return {
+             restrict : "E",
+             template : "<img class='clip{{num3}} seri{{seri3}} cl3'  src='/~bahman/MindReader/img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage4", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num4}} seri{{seri4}} cl4'   src='/~bahman/MindReader/img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage5", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num5}} seri{{seri5}} cl5'  src='/~bahman/MindReader/img/img_trans.gif' />"
+           };
+       });
+	   app.controller("myControl",function($scope){
+		   $scope.test="hello bahman";
+	    });
+</script>
+
+</body>
+</html>

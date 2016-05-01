@@ -1,0 +1,179 @@
+	
+      .clip1 {
+        width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background:0 0;
+      }
+      .clip2 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background:  -203px 0;
+	  }
+      .clip3 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: -407px 0;
+	  }
+	  .clip4 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: -610px 0;
+	  }
+	  .clip5 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+    	background:  -813px 0;
+	  }
+	  
+	  .clip6 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: 0 -266px;
+	  }
+	  .clip7 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: -203px -266px;
+	  }
+	  .clip8 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: -407px -266px;
+	  }
+	  .clip9 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: -610px -266px;
+	  }
+	  .clip10 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background:  -813px -266px;
+	  }
+	  .clip11 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background:  0 -532px;
+	  }
+	  .clip12 {
+		width: 181px;
+		height: 252px;
+		background-repeat: no-repeat;
+        background-size: contain;
+		background: -203px -532px;
+	  }
+	  .clip13 {
+		width: 180px;
+		height: 252px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background:  -407px -532px;
+	  }
+	  .clip14 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: -610px -532px;
+	  }
+	  .clip15 {
+		width: 180px;
+		height: 251px;
+		background-repeat: no-repeat;
+        background-size: contain;
+
+		background: -813px -532px;
+	  }
+		
+	  .seri0{
+		  background-image: url('../img/i0.jpg');
+	  }
+     .seri1{
+		  background-image: url('../img/i1.jpg');
+	  }
+	  .seri2{
+		  background-image: url('../img/i2.jpg');
+	  }
+	  .seri3{
+		  background-image: url('../img/i3.jpg');
+	  }
+	  
+	  .cl1{
+		  transition: all linear 0.5s;
+		  position: relative;
+          top: 20px;
+          left: 20px;
+	  }
+      .cl2{
+		  transition: all linear 0.5s;
+		  position: relative;
+          top: 20px;
+          left: 20px;
+	  }	
+	  .cl3{
+		  transition: all linear 0.5s;
+		  position: relative;
+          top: 20px;
+          left: 20px;
+	  }	  
+	  .cl4{
+		  transition: all linear 0.5s;
+		  position: relative;
+          top: 20px;
+          left: 20px;
+	  }	  
+	  .cl5{
+		  transition: all linear 0.5s;
+		  position: relative;
+          top: 20px;
+          left: 20px;
+	  }  
+	  
+      .ng-hide {
+          height: 20px;
+          width: 20px;
+          background-color: transparent;
+          top:-200px;
+          left: 200px;
+      }
+
+      .btn{
+		  position: relative;
+		  top: 50px;
+	  }
+	

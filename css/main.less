@@ -1,0 +1,27 @@
+	  @top: 100px;
+	  
+	  
+	  .container {
+        position: relative;
+      }
+	  .mySelect(@col,@row)
+	  {
+	    position: absolute;
+		/* clip: shape(top, right, bottom, left); NB 'rect' is the only available option */
+
+		@top=(@row*10px);
+		@right=(@col*10px)+50px;
+		@bottom=(@row*10px)+50px;
+		@left=(@col*10px);
+        /*clip: rect(@top, @right, @bottom, @left);*/
+        clip: rect(0, 100px, 200px, 0);		
+	  }
+      #clip1 {
+	     position: absolute;
+		 
+       clip: rect(0, @top, 200px, 0);
+      }
+	  
+	  #clip2 {
+	    .mySelect(1,0)  
+	  }

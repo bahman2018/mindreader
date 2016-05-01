@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>I can read  your mind!! </title>
+  
+    <meta charset="utf-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">    
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.js"></script>
+
+</head>
+<body>
+     <div ng-app="myApp" ng-controller="myCtrl"  >
+       
+        <div class="container-fluid">
+        
+                 
+            <div class="row">
+                <div class="col-sm-12" align="center">
+                    <card-image1 ></card-image1>
+                    <card-image2></card-image2>
+                    <card-image3></card-image3>
+                    <card-image4></card-image4>
+                    <card-image5></card-image5>
+                </div>
+            </div>
+           
+            <div class="row" >
+               <div class="col-sm-12" align="center" >
+                  <div class="btn">
+                     <p>Pick a card in your mind </p>
+                     <button ng-click="myFunc()">{{ btnTitle }}</button>
+                     {{test}}
+                  </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script>
+       var app=angular.module('myApp',['ngAnimate']);
+	   app.controller('myCtrl', function($scope,$timeout)  {
+		   
+		   var items=[
+		                [[1,0],[4,6],[7,9],[10,2],[3,5]],
+						[[2,4],[5,0],[8,7],[1,10],[4,3]],
+						[[3,1],[6,4],[9,0],[2,7],[5,10]],
+						[[4,2],[7,5],[10,8],[3,0],[6,1]],
+						[[5,3],[8,6],[1,9],[4,2],[7,0]],
+						[[6,4],[9,7],[2,10],[5,0],[8,3]],
+						[[7,5],[10,8],[3,0],[6,1],[9,4]],
+						[[8,6],[1,0],[4,9],[7,2],[10,5]],
+						[[9,0],[2,4],[5,7],[8,10],[1,3]],
+						[[10,8],[3,0],[6,1],[9,4],[2,7]],
+				];
+		   
+
+
+		   $scope.showMe = false;
+		   $scope.myStatus=0;
+		   
+		   t=Math.ceil(Math.random() * 9);
+		   
+		   $scope.t01=items[t][0][0];
+		   $scope.t02=items[t][0][1];
+	
+		   $scope.t11=items[t][1][0];
+		   $scope.t12=items[t][1][1];
+
+		   $scope.t21=items[t][2][0];
+		   $scope.t22=items[t][2][1];
+
+		   $scope.t31=items[t][3][0];
+		   $scope.t32=items[t][3][1];
+          		 
+		   $scope.t41=items[t][4][0];
+		   $scope.t42=items[t][4][1];
+		   
+		   $scope.btnTitle="Read my mind if you can  !!!!";
+          
+		   $scope.myFunc = function() {
+			 switch($scope.myStatus) {
+               case 0:
+                 $scope.myStatus=1;
+				 $scope.showMe = true;
+				 $scope.btnTitle="Show the result"
+                 break;
+               case 1:
+			     $scope.result();
+			     $scope.showMe = false;
+			     $scope.btnTitle="Again"
+                 $scope.myStatus=2;
+                 break;
+               case 2:
+			     location.reload(); 
+                 break;
+              }
+           }
+		   //---------------------------
+		   $scope.result = function(){
+		
+			 t0=$scope.t02;
+			 t1=$scope.t12;
+			 t2=$scope.t22;
+		     t3=$scope.t32;
+			 t4=$scope.t42;
+
+             $scope.num1=(t0);
+			 $scope.seri1=0;  
+			 
+			 $scope.num2=(t1);
+			 $scope.seri2=1
+
+             $scope.num3=(t2);
+			 $scope.seri3=3;  
+
+             $scope.num4=(t3);
+			 $scope.seri4=2;  
+
+             $scope.num5=(t4);
+			 $scope.seri5=0;  
+
+		   };
+		   //-------------------------------				
+		   $scope.init = function(){
+	
+			 t0=$scope.t01;
+			 t1=$scope.t11;
+			 t2=$scope.t21;
+			 t3=$scope.t31;
+			 t4=$scope.t41;
+			 
+		     $scope.num1=(t0);
+			 $scope.seri1=0;  
+			 
+			 $scope.num2=(t1);
+			 $scope.seri2=1
+
+             $scope.num3=(t2);
+			 $scope.seri3=3;  
+
+             $scope.num4=(t3);
+			 $scope.seri4=2;  
+
+             $scope.num5=(t4);
+			 $scope.seri5=0;  
+
+		   };
+		   ///-------------------------
+           $timeout($scope.init);
+	   });
+	 
+	   
+	   app.directive("cardImage1", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num1}} seri{{seri1}} cl1' ng-hide='showMe'  src='img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage2", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num2}} seri{{seri2}} cl2' ng-hide='showMe'  src='img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage3", function() {
+           return {
+             restrict : "E",
+             template : "<img class='clip{{num3}} seri{{seri3}} cl3' ng-hide='showMe' src='img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage4", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num4}} seri{{seri4}} cl4' ng-hide='showMe'  src='img/img_trans.gif' />"
+           };
+       });
+	   app.directive("cardImage5", function() {
+           return {
+             restrict : "E",
+             template : "<img  class='clip{{num5}} seri{{seri5}} cl5' ng-hide='showMe' src='img/img_trans.gif' />"
+           };
+       });
+	   app.controller("myControl",function($scope){
+		   $scope.test="hello bahman";
+	    });
+     </script>
+</body>
+</html>
